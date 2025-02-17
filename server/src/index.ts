@@ -4,7 +4,10 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
+import projectRoutes from './routes/projectRoutes.js';
+import taskRoutes from './routes/taskRoutes.js';
 // Route imports
+
 // congigration
 
 dotenv.config();
@@ -20,6 +23,9 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('home route');
 });
+app.use('/projects', projectRoutes);
+app.use('/tasks', taskRoutes);
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
