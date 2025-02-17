@@ -9,7 +9,7 @@ import { setIsDarkMode, setIsSidebarCollapsed } from '../store/globalSlice';
 import MenuIcon from '@mui/icons-material/Menu'; const NavBar = () => {
     const isDarkMode = useAppSelector(state => state.global.isDarkMode)
     const isSideBarCollapsed = useAppSelector(state => state.global.isSidebarCollapsed)
-    console.log(isSideBarCollapsed)
+    console.log(isSideBarCollapsed,'sidebar')
     const dispatch = useAppDispatch()
     const setDark = (mode: boolean) => dispatch(setIsDarkMode(mode))
     const handleModeChange = () => {
